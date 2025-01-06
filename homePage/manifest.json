@@ -1,0 +1,9 @@
+{
+	"manifest_version": 3,
+	"version": "1.0",
+	"description": "New Home Page",
+	"name": "HomePage",
+	"chrome_url_overrides" : {
+	  "newtab": "homePage.html"
+	}
+}
