@@ -3,7 +3,15 @@
   "description": "Extension based on POMODORO method",
   "version": "1.0",
   "manifest_version": 3,
-  "action" : {
-	"default_popup": "pomodoro.html"
+  "action": {
+    "default_title": "Foo"
+  },
+  "permissions": ["activeTab", "scripting", "tabs"],
+  "host_permissions": [
+    "http://*/*",
+    "https://*/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
   }
 }

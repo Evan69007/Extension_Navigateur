@@ -9,6 +9,8 @@ let min = (time.length != 0 ? parseInt(time[0]) : 10)
 let sec = (time.length != 0 ? time[1] : 0)
 let timerID
 
+timer.innerHTML = "Chargement des données"
+
 const startTimer = () => {
 	timerID = setInterval(() => {
 		progressBar.value = 600 - progressValue
@@ -45,5 +47,6 @@ restartButton.addEventListener('click', () => {
 	timer.innerHTML = timeLeft
 	startTimer()
 })
+
 
 startTimer()

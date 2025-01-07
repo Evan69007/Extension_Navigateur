@@ -8,8 +8,6 @@ h2 {
 }
 
 body {
-	height: 200px;
-	width: 200px;
 	display: flex;
 	flex-wrap: wrap;
 	flex-direction: column;
