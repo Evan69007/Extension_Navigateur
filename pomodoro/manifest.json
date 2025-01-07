@@ -1,0 +1,9 @@
+{
+	"name": "Extension POMODORO",
+	"description": "Extension based on POMODORO method",
+	"version": "1.0",
+	"manifest_version": 3,
+	"action": {
+    	"default_popup": "pomodoro.html"
+  	}
+}
