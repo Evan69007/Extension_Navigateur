@@ -4,7 +4,7 @@
   "version": "1.0",
   "manifest_version": 3,
   "action": {
-    "default_title": "Foo"
+    "default_title": "Create a pomodoro window"
   },
   "permissions": ["activeTab", "scripting", "tabs"],
   "host_permissions": [
