@@ -51,3 +51,17 @@ toDoList.addEventListener('click', async () => {
 		chrome.windows.remove(toDoListWindow.id)
 	}
 })
+
+stickyNotes.addEventListener('click', async () => {
+	if (stickyNotes.checked)
+	{
+		sitckyNotesWindow = await chrome.windows.create({
+			url: 'sticky.html',
+			type: 'panel', width: 400, height: 400,
+		});
+	}
+	else
+	{
+		chrome.windows.remove(sitckyNotesWindow.id)
+	}
+})
