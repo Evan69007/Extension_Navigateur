@@ -1,0 +1,14 @@
+{
+    "manifest_version": 3,
+    "name": "Browser Favoris",
+    "version": "1.0",
+    "description": "",
+    "permissions": ["bookmarks"],
+    "chrome_url_overrides": {
+      "newtab": "index.html"
+    },
+    "icons": {
+      "16": "icon16.png"
+    }
+  }
+  
