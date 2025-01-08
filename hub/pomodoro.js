@@ -37,7 +37,8 @@ const startTimer = () => {
 }
 
 restartButton.addEventListener('click', () => {
-	localStorage.clear()
+	localStorage.removeItem("pomodoro_timer")
+	localStorage.removeItem("pomodoro_progress")
 	clearInterval(timerID)
 	min = 10
 	sec = 0
