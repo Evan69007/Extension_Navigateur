@@ -1,68 +1,77 @@
-let all_link = []; // actualise la liste actuelle + les ajouts de liens
-// récupere les favoris a la racine
+let all_link = []; // Stocke les favoris récupérés
+
+// récupère les favoris à la racine
 function get_fav_link(callback) {
   // appel API Chrome Bookmarks
   chrome.bookmarks.getChildren('1', function(bookmarks) {
-    callback(bookmarks);
+    callback(bookmarks); // chrome.bookmarks.getChildren est asynchrone. Elle nécessite une fonction de rappel (callback) pour traiter les résultats après la récupération des données.
   });
 }
+
 // Affichage HTML
 function fav_link(bookmarks) {
-  const favoritesList = document.getElementById('favorites-list'); // Liste des favoris dans le DOM
-  favoritesList.innerHTML = ''; // Réinitialise le contenu de la liste
+  const favoritesList = document.getElementById('favorites-list');
+  favoritesList.innerHTML = '';
 
   // Check les favoris
   for (let i = 0; i < bookmarks.length; i++) {
     const bookmark = bookmarks[i];
-
-    // Création et affichage HTML
     const li = document.createElement('li');
-    li.innerHTML = `
-      <a href="${bookmark.url || '#'}" target="_blank">${bookmark.title || '(Sans titre)'}</a>
-    `;
-    favoritesList.appendChild(li); // Ajoute l'élément à la liste
+
+    if (bookmark.url) {
+      li.innerHTML = `<a href="${bookmark.url}" target="_blank">${bookmark.title || '(Sans titre)'}</a>`;
+    }
+
+
+
+  const deleteButton = document.createElement('button');
+  deleteButton.textContent = 'Supprimer';
+  deleteButton.setAttribute('data-id', bookmark.id);
+
+
+ 
+  li.appendChild(deleteButton);
+  favoritesList.appendChild(li); // Ajoute l'élément à la liste
+  }
+
+
+  addDeleteEvent();
+}
+
+// Fonction pour ajouter les gestionnaires d'événements "supprimer"
+function addDeleteEvent() {
+  const deleteButtons = document.querySelectorAll('#favorites-list button');
+
+  for (let i = 0; i < deleteButtons.length; i++) {
+    const button = deleteButtons[i];
+    button.addEventListener('click', BtnDeleteClick);
   }
 }
 
-// ajouter un nouveau favori
-function add_link(title, url, callback) {
-  // Utilisation de l'API Chrome Bookmarks pour créer un nouveau favori
-  chrome.bookmarks.create(
-    {
-      parentId: '1', // Ajout dans la racine principale
-      title: title,  
-      url: url      
-    },
-    callback // Actualise
-  );
+
+function BtnDeleteClick(event) {
+  const bookmarkId = event.target.getAttribute('data-id'); // Récupère l'ID du favori
+  deleteBookmark(bookmarkId);
+}
+
+
+function deleteBookmark(bookmarkId) {
+  chrome.bookmarks.remove(bookmarkId, refreshlink); // Supprime et rafraîchit les favoris
 }
 
 // rafraîchir et afficher les favoris
 function refreshlink() {
-  // Utilisation de l'API Chrome Bookmarks pour récupérer et mettre à jour les favoris
+  // Appel API pour mettre à jour les favoris // a utiliser ac les nouveaux liens
   get_fav_link(function(bookmarks) {
-    all_link = bookmarks; // Met à jour la liste locale
+    all_link = bookmarks; // Met à jour la liste locale // a utiliser ac les nouveaux liens
     fav_link(all_link); // Affiche les favoris
   });
 }
 
 // Initialisation de l'application
 function initialize() {
-
-  const add_enter = document.getElementById('add_enter');
-  const titleInput = document.getElementById('new-favorite-title');
-  const urlInput = document.getElementById('new-favorite-url');
-
-  refreshlink();
-
-  // Gère l'ajout de favoris
-  add_enter.addEventListener('submit', function(event) {
-    event.preventDefault(); // Empêche le rechargement de la page
-    const title = titleInput.value;
-    const url = urlInput.value;
-    add_link(title, url, refreshlink);
-    titleInput.value = ''; // efface le champ
-    urlInput.value = ''; // idem
-  });
+  refreshlink(); // Charge et affiche les favoris
 }
+
+// Lancement après le chargement du DOM
 document.addEventListener('DOMContentLoaded', initialize);
