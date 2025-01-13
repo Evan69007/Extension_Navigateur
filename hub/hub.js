@@ -11,8 +11,7 @@ let windowsTab
 let pomodoroWindow
 let favoritesWindow
 let toDoListWindow
-let sitckyNotesWindow
-let lastWindowFocused
+let stickyNotesWindow
 let fullDate = new Date()
 
 pomodoro.addEventListener('click', async () => {
@@ -60,14 +59,14 @@ toDoList.addEventListener('click', async () => {
 stickyNotes.addEventListener('click', async () => {
 	if (stickyNotes.checked)
 	{
-		sitckyNotesWindow = await chrome.windows.create({
+		stickyNotesWindow = await chrome.windows.create({
 			url: 'sticky.html',
 			type: 'panel', width: 400, height: 400,
 		});
 	}
 	else
 	{
-		chrome.windows.remove(sitckyNotesWindow.id)
+		chrome.windows.remove(stickyNotesWindow.id)
 	}
 })
 

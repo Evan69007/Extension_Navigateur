@@ -48,6 +48,7 @@ restartButton.addEventListener('click', () => {
 	StartStopButton.removeEventListener("click", Start);
     StartStopButton.addEventListener("click", Stop);
 	image.src = "pauseButton.png"
+	image.style.height = "64px"
 	clearInterval(timerID)
 	min = 10
 	sec = 0
