@@ -79,15 +79,39 @@ function searchFavorites() {
   fav_link(filteredBookmarks);
 }
 
+function add_link(title, url, callback) {
+	// Utilisation de l'API Chrome Bookmarks pour créer un nouveau favori
+	chrome.bookmarks.create(
+	  {
+		parentId: '1', // Ajout dans la racine principale
+		title: title,  
+		url: url      
+	  },
+	  callback // Actualise
+	);
+}
 
 // Initialisation
 function initialize() {
-  refreshlink(); // Charge et affiche les favoris
+	const add_enter = document.getElementById('add_enter');
+ 	 const titleInput = document.getElementById('new-favorite-title');
+ 	 const urlInput = document.getElementById('new-favorite-url');
+ 	 refreshlink(); // Charge et affiche les favoris
 
-  // Ecouteur recherche
-  const searchField = document.getElementById('search');
-  searchField.addEventListener('input', searchFavorites);
+	  add_enter.addEventListener('submit', function(event) {
+		event.preventDefault(); // Empêche le rechargement de la page
+		const title = titleInput.value;
+		const url = urlInput.value;
+		add_link(title, url, refreshlink);
+		titleInput.value = ''; // efface le champ
+		urlInput.value = ''; // idem
+	});
+ 	 // Ecouteur recherche
+ 	 const searchField = document.getElementById('search');
+  	searchField.addEventListener('input', searchFavorites);
 }
+
+
 
 // lancement après le chargement du DOM
 document.addEventListener('DOMContentLoaded', initialize);
