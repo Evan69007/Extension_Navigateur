@@ -32,7 +32,7 @@ favorites.addEventListener('click', async () => {
 	if (favorites.checked)
 	{
 		favoritesWindow = await chrome.windows.create({
-			url: 'index.html',
+			url: 'favorite.html',
 			type: 'panel', width: 300, height: 400,
 		});
 	}
@@ -46,7 +46,7 @@ toDoList.addEventListener('click', async () => {
 	if (toDoList.checked)
 	{
 		toDoListWindow = await chrome.windows.create({
-			url: 'popup.html',
+			url: 'toDo.html',
 			type: 'panel', width: 400, height: 400,
 		});
 	}
