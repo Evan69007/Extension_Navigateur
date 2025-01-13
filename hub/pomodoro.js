@@ -34,7 +34,7 @@ const startTimer = () => {
 			clearInterval(timerID)
 			audio.play()
 		}
-	}, 10)
+	}, 1000)
 }
 
 function updateTimer()
