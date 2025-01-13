@@ -19,7 +19,7 @@ pomodoro.addEventListener('click', async () => {
 	{
 		pomodoroWindow = await chrome.windows.create({
 			url: 'pomodoro.html',
-			type: 'panel', width: 230, height: 320,
+			type: 'panel', width: 260, height: 340,
 		});
 	}
 	else
