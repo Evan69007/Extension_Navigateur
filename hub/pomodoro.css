@@ -1,10 +1,19 @@
 progress {
-	margin-left: 13px;
+	margin-left: 43px;
 	height: 40px;
 }
 
+#title {
+	margin-left: 30px;
+}
+
 h2 {
-	margin-left: 52px;
+	margin-left: 82px;
+}
+
+input {
+	width: 220px;
+	text-align: center;
 }
 
 body {

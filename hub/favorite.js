@@ -109,6 +109,11 @@ function initialize() {
  	 // Ecouteur recherche
  	 const searchField = document.getElementById('search');
   	searchField.addEventListener('input', searchFavorites);
+
+	// Ecouteur ajout favoris via chrome
+    chrome.bookmarks.onCreated.addListener(function handleCreated(id, node) {
+		refreshlink()
+	  })
 }
 
 
