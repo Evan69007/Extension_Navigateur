@@ -1,6 +1,7 @@
 progress {
 	margin-left: 43px;
 	height: 40px;
+	align-items: center;
 }
 
 #title {
@@ -26,4 +27,24 @@ body {
 #startStop {
 	border: transparent;
 	background-color: white;
+	align-self: center;
+	margin: 15px;
+}
+
+#restart {
+	color: black;
+	font-weight: 700;
+	background-color: white;
+	border: 3px solid black;
+	border-radius: 15px;
+	text-align: center;
+	padding: 8px;
+}
+
+button {
+	all: unset;
+}
+
+button:hover {
+	cursor: pointer;
 }

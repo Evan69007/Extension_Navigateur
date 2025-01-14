@@ -131,7 +131,7 @@ function Start()
 
 function Stop(){
 	image.src = "playButton.png"
-	image.style.height = "64px"
+	image.style.height = "20px"
 	clearInterval(timerID)
     StartStopButton.removeEventListener("click", Stop);
     StartStopButton.addEventListener("click", Start);

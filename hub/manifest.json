@@ -1,6 +1,6 @@
 {
 	"manifest_version": 3,
-	"name": "My Hub",
+	"name": "Orbit",
 	"version": "2.0",
 	"permissions":[
 		"bookmarks",
@@ -12,7 +12,8 @@
     	"https://*/*"
     ],
     "action": {
-        "default_title": "Open Hub"
+        "default_title": "Open Hub",
+		"default_icon": "OrbitIcon.png"
     },
     "background": {
        "service_worker": "background.js"
