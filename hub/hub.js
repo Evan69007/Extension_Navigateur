@@ -4,6 +4,7 @@ const favorites = document.querySelector('#Favorites');
 const toDoList = document.querySelector('#ToDoList');
 const search = document.querySelector('#searchBar');
 const searchButton = document.querySelector('#validate');
+const calculator = document.querySelector('#Calculator');
 const date = document.querySelector('#date');
 const time = document.querySelector('#time');
 
@@ -12,6 +13,7 @@ let pomodoroWindow
 let favoritesWindow
 let toDoListWindow
 let stickyNotesWindow
+let calculatorWindow
 let fullDate = new Date()
 
 pomodoro.addEventListener('click', async () => {
@@ -67,6 +69,20 @@ stickyNotes.addEventListener('click', async () => {
 	else
 	{
 		chrome.windows.remove(stickyNotesWindow.id)
+	}
+})
+
+calculator.addEventListener('click', async () => {
+	if (calculator.checked)
+	{
+		calculatorWindow = await chrome.windows.create({
+			url: 'calculator.html',
+			type: 'panel', width: 520, height: 420,
+		});
+	}
+	else
+	{
+		chrome.windows.remove(calculatorWindow.id)
 	}
 })
 

@@ -5,6 +5,8 @@ body {
 	align-items: center;
 	justify-content: center;
 	gap: 20px;
+	max-width: 1200px; /*Largeur maximale pour centrer le contenu */
+	margin: 0 auto; /*Centrer le contenu horizontalement*/
 }
 
 body {
@@ -24,25 +26,25 @@ body {
 #date {
 	position:relative;
 	top: 5%;
-	right: 35%;
-	transform: translate(-50%, -190%);;
+	right: 34%;
+	transform: translate(-50%, -120%);;
 }
 
 #time {
 	position:relative;
 	top: 35%;
-	transform: translate(175%, -580%);
+	transform: translate(175%, -480%);
 	width: 100px;
 }
 
 #logoName {
 	position:absolute;
-	transform: translate(10%, -120%);
+	transform: translate(10%, -175%);
 }
 
 #slogan {
 	position:absolute;
-	transform: translate(70%, 500%);
+	transform: translate(70%, 425%);
 }
 
 #search {
@@ -63,12 +65,12 @@ button {
 	border-radius: 5px;
 	color: white;
 	text-align: center;
-	padding: 5px;
-	width: 90px;
+	padding-bottom: 3px;
+	width: 70px;
 	position:absolute;
 	top: 57%;
 	left: 70%;
-	transform: translate(-50%, -50%);
+	transform: translate(-50%, -140%);
 }	
 
 #validate:hover {
@@ -92,9 +94,13 @@ div {
 	flex-wrap: wrap;
 	flex-direction: column;
 	gap: 20px;
-	margin-top: 35px;
+	margin-top: 25px;
 	margin-left: 30px;
 	margin-right: 90px;
+}
+
+#right {
+	margin-top: -28px;
 }
 
 p {

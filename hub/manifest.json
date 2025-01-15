@@ -23,5 +23,10 @@
     },
     "background": {
        "service_worker": "background.js"
-    }  
+    },
+	"sandbox": {
+		"pages": [
+		"calculator.html"
+		]
+	}
 }
