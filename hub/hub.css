@@ -7,6 +7,7 @@ body {
 	gap: 20px;
 	max-width: 1200px; /*Largeur maximale pour centrer le contenu */
 	margin: 0 auto; /*Centrer le contenu horizontalement*/
+	background-color: #ACACAC;
 }
 
 body {

@@ -115,4 +115,4 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Initialiser l'application
     init();
-  }); 
+  });
