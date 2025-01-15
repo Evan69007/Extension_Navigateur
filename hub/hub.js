@@ -77,7 +77,7 @@ calculator.addEventListener('click', async () => {
 	{
 		calculatorWindow = await chrome.windows.create({
 			url: 'calculator.html',
-			type: 'panel', width: 520, height: 420,
+			type: 'panel', width: 530, height: 420,
 		});
 	}
 	else
