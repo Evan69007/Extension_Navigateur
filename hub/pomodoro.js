@@ -45,7 +45,7 @@ function updateTimer()
 		timer.innerHTML = "00:00"
 		clearInterval(timerID)
 		image.src = "playButton.png"
-		image.style.height = "64px"
+		image.style.height = "20px"
 		return
 	}
 	timeLeft = (min < 10 ? "0" + min : min) + ":" + (sec < 10 ? "0" + sec : sec)
@@ -68,12 +68,12 @@ resetButton.addEventListener('click', () => {
     StartStopButton.addEventListener("click", firstStart);
 
 	inputTime.style.display = "inline-block"
-	progressBar.style.marginLeft = "43px"
-	timer.style.marginLeft = "82px"
-	document.querySelector('#title').style.marginLeft = "30px"
+	/* progressBar.style.marginLeft = "43px" */
+	/* timer.style.marginLeft = "82px" */
+	/* document.querySelector('#title').style.marginLeft = "30px" */
 
 	image.src = "playButton.png"
-	image.style.height = "64px"
+	image.style.height = "20px"
 })
 
 updateTimer()
@@ -81,25 +81,25 @@ updateTimer()
 if(localStorage.getItem("nb_sec"))
 {
 	inputTime.style.display = "none"
-	progressBar.style.marginLeft = "13px"
+	/* progressBar.style.marginLeft = "13px"
 	timer.style.marginLeft = "52px"
-	document.querySelector('#title').style.marginLeft = "0px"
+	document.querySelector('#title').style.marginLeft = "0px" */
 }
 else
 {
 	inputTime.style.display = "inline-block"
-	progressBar.style.marginLeft = "43px"
+	/* progressBar.style.marginLeft = "43px"
 	timer.style.marginLeft = "82px"
-	document.querySelector('#title').style.marginLeft = "30px"
+	document.querySelector('#title').style.marginLeft = "30px" */
 }
 
 (localStorage.getItem("nb_sec") ? StartStopButton.addEventListener("click", Start) : StartStopButton.addEventListener("click", firstStart))
 
 function firstStart(){
 	inputTime.style.display = "none"
-	progressBar.style.marginLeft = "13px"
-	timer.style.marginLeft = "52px"
-	document.querySelector('#title').style.marginLeft = "0px"
+	/* progressBar.style.marginLeft = "13px" */
+	/* timer.style.marginLeft = "52px" */
+	/* document.querySelector('#title').style.marginLeft = "0px" */
 	min = (inputTime.value ? inputTime.value : 10)
 	sec = 0
 	progressValue = min * 60
@@ -109,7 +109,7 @@ function firstStart(){
 	inputTime.value = ""
 	updateTimer()
 	image.src = "pauseButton.png"
-	image.style.height = "64px"
+	image.style.height = "20px"
 	startTimer()
     StartStopButton.removeEventListener("click", firstStart);
     StartStopButton.addEventListener("click", Stop);
@@ -119,11 +119,11 @@ function Start()
 {
 	progressBar.max = nb_sec
 	inputTime.style.display = "none"
-	progressBar.style.marginLeft = "13px"
-	timer.style.marginLeft = "52px"
-	document.querySelector('#title').style.marginLeft = "0px"
+	/* progressBar.style.marginLeft = "13px" */
+	/* timer.style.marginLeft = "52px" */
+	/* document.querySelector('#title').style.marginLeft = "0px" */
 	image.src = "pauseButton.png"
-	image.style.height = "64px"
+	image.style.height = "20px"
 	startTimer()
     StartStopButton.removeEventListener("click", Start);
     StartStopButton.addEventListener("click", Stop);

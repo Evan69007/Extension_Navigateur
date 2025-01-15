@@ -1,50 +1,56 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centre les éléments verticalement */
+    align-items: center; /* Centre les éléments horizontalement */
+    min-height: 100vh; /* Assure que le body prend toute la hauteur de la fenêtre */
+    margin: 0; /* Supprime les marges par défaut */
+}
+
 progress {
-	margin-left: 43px;
-	height: 40px;
-	align-items: center;
+    margin: 10px 0; /* Ajuste les marges */
+    height: 40px;
 }
 
 #title {
-	margin-left: 30px;
+    margin: 0; /* Supprime la marge gauche */
+    text-align: center; /* Centre le texte du titre */
 }
 
-h2 {
-	margin-left: 82px;
+#timer {
+    text-align: center;
+    font-size: 24px;
+    margin: 10px 0; /* Uniformise les marges */
 }
 
 input {
-	width: 220px;
-	text-align: center;
-}
-
-body {
-	display: flex;
-	flex-wrap: wrap;
-	flex-direction: column;
-	align-content: center;
+    width: 180px;
+    text-align: center;
+    padding: 5px;
+    border: 3px solid #2196F3;
+    border-radius: 5px;
 }
 
 #startStop {
-	border: transparent;
-	background-color: white;
-	align-self: center;
-	margin: 15px;
+    border: transparent;
+    background-color: white;
+    margin: 15px;
 }
 
-#restart {
-	color: black;
-	font-weight: 700;
-	background-color: white;
-	border: 3px solid black;
-	border-radius: 15px;
-	text-align: center;
-	padding: 8px;
+#reset {
+    color: black;
+    font-weight: 700;
+    background-color: white;
+    border: 3px solid #2196F3;
+    border-radius: 15px;
+    text-align: center;
+    padding: 8px;
 }
 
 button {
-	all: unset;
+    all: unset;
 }
 
 button:hover {
-	cursor: pointer;
+    cursor: pointer;
 }

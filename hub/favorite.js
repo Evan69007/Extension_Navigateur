@@ -24,7 +24,7 @@ function fav_link(bookmarks) {
 
     // Bouton de suppression
     const deleteButton = document.createElement('button');
-    deleteButton.textContent = '✖️';
+    deleteButton.textContent = 'x';
     deleteButton.setAttribute('data-id', bookmark.id);
 
     // Ajoute les éléments au DOM

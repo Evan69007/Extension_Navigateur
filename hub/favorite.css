@@ -6,7 +6,7 @@ h1 {
     display: flex;
     justify-self: center;
     margin: 30px;
-    border: 3px solid black;
+    border: 3px solid #2196F3;
     border-radius: 5px;
 }
 
@@ -14,7 +14,7 @@ h1 {
     display: flex;
     justify-self: center;
     margin: 15px;
-    border: 3px solid black;
+    border: 3px solid #2196F3;
     border-radius: 5px;
 }
 
@@ -22,7 +22,7 @@ h1 {
     display: flex;
     justify-self: center;
     margin: 10px;
-    border: 3px solid black;
+    border: 3px solid #2196F3;
     border-radius: 5px;
 }
 
@@ -33,9 +33,10 @@ h1 {
     margin-bottom: 20px; 
     cursor: pointer;
     background: none;
-    font-size: 20px;
+    font-size: 15px;
+    font-weight: 600;
     border: 3px solid black;
-    border-radius: 25px;
+    border-radius: 5px;
 }
 
 
@@ -60,7 +61,8 @@ button {
     border: none;
     cursor: pointer;
     background: none;
-    font-size: 20px;
+    font-size: 15px;
+    font-weight: 600;
     border: 3px solid black;
     border-radius: 5px;
 }

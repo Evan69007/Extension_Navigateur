@@ -2,6 +2,12 @@
 	"manifest_version": 3,
 	"name": "Orbit",
 	"version": "2.0",
+	"web_accessible_resources": [
+		{
+		  "resources": ["ExtensionLogoName.png", "Screenshot 2025-01-14 at 15.33.33.png"],
+		  "matches": ["<all_urls>"]
+		}
+	],	
 	"permissions":[
 		"bookmarks",
 		"activeTab",
